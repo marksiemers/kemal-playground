@@ -1,0 +1,20 @@
+name: kemal-playground
+version: 0.1.0
+
+authors:
+  - Mark Siemers <mark.siemers@gmail.com>
+
+targets:
+  kemal-playground:
+    main: src/kemal_playground.cr
+
+crystal: 0.22.0
+
+license: MIT
+
+dependencies:
+  kemal:
+    github: kemalcr/kemal
+    branch: master
+  slang:
+    github: jeromegn/slang
