@@ -1,4 +1,4 @@
-require "./kemal_playground/*"
+require "./kemal-playground/*"
 
 require "kemal"
 require "json"
