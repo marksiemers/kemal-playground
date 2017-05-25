@@ -1,13 +1,27 @@
+var autocompleteSource = function(term, response){
+  $.getJSON('/autocomplete', { message: term }, function(data) {
+    response(data.map(function(item){ return item.name }))
+  })
+}
+
+var bindAjaxToElements = function() {
+  new autoComplete({
+    selector: '#ajax-autocomplete-input',
+    source: autocompleteSource
+  })
+}
+
 var awesompleteFilter = function(text, input) {
   return true
 }
 
-function isSecure()
-{
-   return window.location.protocol == 'https:';
+function isSecure() {
+  return window.location.protocol == 'https:';
 }
 
 $(document).ready(function() {
+  bindAjaxToElements()
+
   var webSocketProtocol = isSecure() ? "wss:" : "ws:"
   var ws = new WebSocket(webSocketProtocol + "//" + location.host + "/autocomplete")
   var input = document.getElementById("msg")
@@ -27,7 +41,7 @@ $(document).ready(function() {
     }
   })
   window.onbeforeunload = function() {
-    websocket.onclose = function () {}; // disable onclose handler first
+    websocket.onclose = function () {} // disable onclose handler first
     websocket.close()
   }
 })

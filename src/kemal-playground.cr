@@ -20,6 +20,11 @@ get "/:name" do |env|
   render "src/views/hello.ecr", "src/views/layouts/layout.ecr"
 end
 
+get "/autocomplete" do |env|
+  message = env.params.query["message"].as(String)
+  [{ name: message }, { name: "#{message} Also this" }, { name: "#{message} and this"}].to_json
+end
+
 ws "/autocomplete" do |socket|
   socket.on_message do |message|
     socket.send [{ name: message }, { name: "#{message} Also this" }, { name: "#{message} and this"}].to_json
