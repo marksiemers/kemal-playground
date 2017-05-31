@@ -12,7 +12,7 @@ end
 
 get "/json" do |env|
   env.response.content_type = "application/json"
-  { name: "Mark", age: 34 }.to_json
+  { name: "Mark" }.to_json
 end
 
 get "/:name" do |env|
