@@ -1,18 +1,26 @@
 # kemal-playground
 
-TODO: Write a description here
+A sandbox app to play around with Kemal. Two autocomplete fields have been implemented - one that uses AJAX and another that uses WebSockets.
 
 ## Installation
 
-TODO: Write installation instructions here
+1. [Install Crystal](https://crystal-lang.org/docs/installation/)
+2. Run the following commands
+```bash
+$ shards install
+$ crystal build --release src/kemal-playground.cr # Omit the release flag for faster non-optimized builds
+$ ./kemal-playground
+[development] Kemal is ready to lead at http://0.0.0.0:3000
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+1. Visit `localhost:3000`
+2. Be impressed with Kemal's sub 100µs response times
 
 ## Development
 
-TODO: Write development instructions here
+No further development is planned beyond adhoc features being added. Feel free to fork if you want a starting point with Kemal.
 
 ## Contributing
 
@@ -24,4 +32,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name]) Mark Siemers - creator, maintainer
+- Mark Siemers ([marksiemers](https://github.com/marksiemers)) - creator, maintainer
